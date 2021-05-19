@@ -33,16 +33,15 @@
 					"monitors": [
 						"http"
 					],
-					"members": [
-				   		{% for port in tenant_info_var.service_ports %}{ 
-							"servicePort": {{port}},
-							"serverAddresses": [
-								{% set comma = joiner(",") %}
-								{% for mem in tenant_info_var.pool_members %}
-								{{comma()}} "{{ mem }}"
-								{% endfor %}
-							]}{{ ", " if not loop.last else ""}}
-						{% endfor %}]
+					"members": [{
+						"servicePort": 3000,
+					  	"serverAddresses": [
+                    		{% set comma = joiner(",") %}
+                    		{% for mem in tenant_info_var.pool_members %}
+                        	{{comma()}} "{{ mem }}"
+                    		{% endfor %}
+            			]
+					}]
 				}
 			}
 		}

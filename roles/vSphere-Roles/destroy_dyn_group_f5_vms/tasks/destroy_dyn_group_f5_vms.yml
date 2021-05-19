@@ -16,6 +16,8 @@
       name: "{{ vm_hostname }}{{ova_builds_var.tmpl_name}}-{{item}}"
     register: info 
     with_sequence: "start=1 count={{ova_builds_var.build_count}} format=%.3d"
+    until: 
+    - info.instance.hw_eth0.ipaddresses[0] is not none and info.instance.ipv4 is not none
 
   - name: Add VMs to dynamic dynamic_f5_vms Group (v14+)
     add_host:
@@ -25,6 +27,7 @@
       ansible_password="{{f5_pass}}"
       groups=dynamic_f5_vms
     with_sequence: "start=0 count={{ova_builds_var.build_count}}"
+    when: info.results[item|int].instance.hw_eth0.ipaddresses[0] is defined
 
   - name: Add VMs to dynamic dynamic_f5_vms Group (v12 & v13)
     add_host:
@@ -34,3 +37,4 @@
       ansible_password="{{f5_pass}}"
       groups=dynamic_f5_vms
     with_sequence: "start=0 count={{ova_builds_var.build_count}}"
+    when: info.results[item|int].instance.hw_eth0.ipaddresses[0] is not defined

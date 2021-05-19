@@ -1,0 +1,29 @@
+---
+#Example of an unencrypted Vault file with variables used.
+
+###AD_Environment
+my_domain_admin: "mydomain\\demouser"
+my_domain_password: "abc123!@#$"
+my_domain: "mydomain.local"
+
+###F5_ENV
+#BIG-IP
+f5_user: admin
+f5_pass: "abc123!@#$" 
+f5_admin_port: 443
+
+#BIG-IQ
+BIQ_IP: "10.192.1.199"
+BIQ_PoolName: "MyBIGIQ-License_Pool"
+BIQ_Pass: "abc123!@#$"
+BIQ_User: "admin"
+
+###vSphere_ENV
+vcenter_hostname: "My_vCenter.mydomain.local"
+vcenter_username: "demouser@mydomain.local"
+vcenter_password: "abc123!@#$"
+vcenter_validate_certs: no
+datacenter_name: "My_vCenter_DC"
+cluster_name: "My_vCenter_Cluster"
+datastore: "My_vCenter_DS"
+dvs_switch_name: "My_vCenter_DVS"

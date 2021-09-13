@@ -12,7 +12,7 @@
       validate_certs: no
       name: "{{vm_hostname}}{{ ova_builds_var.tmpl_name }}-TMPL"
       #networks: "{u'Management':u'{{ Management_Network }}', u'Internal':u'{{ Internal_Network }}', u'External':u'{{ External_Network }}', u'HA':u'{{ HA_Network }}' }"
-      networks: "{u'Management':u'VM Network', u'Internal':u''VM Network', u'External':u'VM Network', u'HA':u'VM Network' }"
+      networks: "{u'Management':u'VM Network', u'Internal':u'VM Network', u'External':u'VM Network', u'HA':u'VM Network' }"
       power_on: no
       ovf: "{{ ova_builds_var.location }}"
       deployment_option: "{{ova_builds_var.option}}" 

@@ -37,10 +37,14 @@
       validate_certs: False
       name: "{{ vm_hostname }}{{ova_builds_var.tmpl_name}}-{{item}}"
       networks:
-      - name: "{{ Management_Network }}"
-      - name: "{{ Internal_Network }}"
-      - name: "{{ External_Network }}"
-      - name: "{{ HA_Network }}"
+      - dvswitch_name: "{{ dvs_switch_name }}"
+        name: "{{ Management_Network }}"
+      - dvswitch_name: "{{ dvs_switch_name }}"
+        name: "{{ Internal_Network }}"
+      - dvswitch_name: "{{ dvs_switch_name }}"
+        name: "{{ External_Network }}"
+      - dvswitch_name: "{{ dvs_switch_name }}"
+        name: "{{ HA_Network }}"
     delegate_to: localhost
     with_sequence: "start=1 count={{ova_builds_var.build_count}} format=%.3d"
 

@@ -45,7 +45,7 @@
    f5networks.f5_modules.bigip_lx_package:
     package: "~/{{as3_rpm}}"
     provider: "{{ provider }}"
-   register: install_as3
+   #register: install_as3
    delegate_to: localhost
    #retries: 10
    #until: install_as3 is not failed

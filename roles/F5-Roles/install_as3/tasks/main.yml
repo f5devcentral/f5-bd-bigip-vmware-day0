@@ -44,5 +44,5 @@
     provider: "{{ provider }}"
    register: install_as3
    delegate_to: localhost
-   retries: 10
-   until: install_as3 is not failed
+   #retries: 10
+   #until: install_as3 is not failed

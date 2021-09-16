@@ -6,6 +6,14 @@
    with_items: "{{f5_ova_builds}}"
    loop_control:
      loop_var: ova_builds_var 
+   when: tmpl_name is not defined
+
+ - name: Provision VM from Template 
+   include: clone_f5_vm_static.yml
+   with_items: "{{f5_ova_builds}}"
+   loop_control:
+     loop_var: ova_builds_var 
+   when: tmpl_name is defined
 
  - name: Add Guest Customization (IP/GW/Passwords) 
    include: guest_cust.yml

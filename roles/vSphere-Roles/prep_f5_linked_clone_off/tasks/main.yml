@@ -6,3 +6,11 @@
    with_items: "{{f5_ova_builds}}"
    loop_control:
      loop_var: ova_builds_var
+   when: tmpl_name is not defined
+
+ - name: Snapshot Master Templates
+   include: take_snap_static.yml
+   with_items: "{{f5_ova_builds}}"
+   loop_control:
+     loop_var: ova_builds_var
+   when: tmpl_name is defined

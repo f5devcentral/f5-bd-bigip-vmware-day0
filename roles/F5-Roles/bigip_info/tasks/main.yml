@@ -1,0 +1,9 @@
+---
+# tasks install Declaritive Onboarding Latest
+  
+ - name: Get BIP INFO
+   f5networks.f5_modules.bigip_device_info:
+     gather_subset:
+       - system-info
+     provider: "{{ provider }}"
+   register: device_facts

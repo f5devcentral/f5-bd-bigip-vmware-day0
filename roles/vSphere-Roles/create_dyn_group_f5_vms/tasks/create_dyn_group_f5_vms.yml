@@ -25,7 +25,9 @@
     #until: info.instance.hw_eth0.ipaddresses[0] == '"{{ip_subnet}}.{{ip_last_octet |int + item |int }}"' and info.instance.ipv4 == '"{{ip_subnet}}.{{ip_last_octet |int + item |int }}"'
 
   - debug:
-      var: info
+      var: info.results[item|int].instance.hw_eth0.ipaddresses[0]
+    with_sequence: "start=0 count={{ova_builds_var.build_count}}"
+
 
   - name: Add VMs to dynamic dynamic_f5_vms Group (v14+)
     add_host:

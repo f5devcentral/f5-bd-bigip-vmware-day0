@@ -39,7 +39,7 @@
    run_once: true
  
  - debug:
-     var: as3_rpm
+     var: provider
 
  - name: Install AS3
    f5networks.f5_modules.bigip_lx_package:

@@ -37,6 +37,9 @@
  - ansible.builtin.set_fact:
     as3_rpm: "{{ls_output.stdout}}"
    run_once: true
+ 
+ - debug:
+     var: as3_rpm
 
  - name: Install AS3
    f5networks.f5_modules.bigip_lx_package:

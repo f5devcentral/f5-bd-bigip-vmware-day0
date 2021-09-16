@@ -24,8 +24,8 @@
     #- ip_subnet in info.instance.hw_eth0.ipaddresses[0] or ip_subnet in info.instance.ipv4 
     #until: info.instance.hw_eth0.ipaddresses[0] == '"{{ip_subnet}}.{{ip_last_octet |int + item |int }}"' and info.instance.ipv4 == '"{{ip_subnet}}.{{ip_last_octet |int + item |int }}"'
 
-  # - debug:
-  #     var: info
+   - debug:
+       var: info
 
   - name: Add VMs to dynamic dynamic_f5_vms Group (v14+)
     add_host:

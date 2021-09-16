@@ -43,6 +43,6 @@
     package: "~/{{as3_rpm}}"
     provider: "{{ provider }}"
    register: install_as3
-   #delegate_to: localhost
+   delegate_to: localhost
    #retries: 10
    #until: install_as3 is not failed

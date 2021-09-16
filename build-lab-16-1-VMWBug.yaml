@@ -33,7 +33,7 @@
     - ../vars/HZN-Lab/deployment.yml
   roles:
     - roles/F5-Roles/wait_for_bigip_startup
-    - roles/F5-Roles/install_as3
+#    - roles/F5-Roles/install_as3
     - roles/F5-Roles/install_do
     - roles/F5-Roles/restart_services_check
     - roles/F5-Roles/do_configure

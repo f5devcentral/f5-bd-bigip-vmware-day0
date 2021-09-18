@@ -4,10 +4,6 @@
   f5networks.f5_modules.bigip_wait:
     delay: 5
     provider: "{{provider}}"
-  register: wait_status
-  until: wait_status is success
-  retries: 5
-  delay: 30
   delegate_to: localhost
 
 - name: Test if DO is working Correctly
@@ -55,4 +51,4 @@
   delegate_to: localhost
 
 - pause:
-    seconds: 30
+    seconds: 60

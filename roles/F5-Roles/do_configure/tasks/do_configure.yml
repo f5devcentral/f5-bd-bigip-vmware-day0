@@ -12,6 +12,7 @@
    f5networks.f5_modules.bigip_wait:
      delay: 5
      provider: "{{provider}}"
+   register: wait_status
    until: wait_status is success
    retries: 5
    delay: 30

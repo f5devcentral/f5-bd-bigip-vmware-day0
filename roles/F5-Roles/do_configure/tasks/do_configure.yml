@@ -12,7 +12,11 @@
    f5networks.f5_modules.bigip_wait:
      delay: 5
      provider: "{{provider}}"
+   until: wait_status is success
+   retries: 5
+   delay: 30
    delegate_to: localhost
+   
 
  - name: Configure F5 via DO
    ansible.builtin.uri:

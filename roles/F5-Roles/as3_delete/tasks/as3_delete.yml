@@ -16,7 +16,7 @@
 
  - name: DELETE AS3
    ansible.builtin.uri:
-     url: "https://{{ ansible_host }}:{{f5_admin_port}}/mgmt/shared/appsvcs/declare/Customer-Tenant"
+     url: "https://{{ ansible_host }}:{{f5_admin_port}}/mgmt/shared/appsvcs/declare/{{ tenant_info_var.tenant_name }}"
      method: DELETE
      status_code: 200
      timeout: 300

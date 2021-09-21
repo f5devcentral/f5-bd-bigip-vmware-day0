@@ -1,0 +1,6 @@
+---
+ - name: Remove AS3 Per Tenant
+   include: as3_delete.yml
+   with_items: "{{tenant_info}}"
+   loop_control:
+     loop_var: tenant_info_var

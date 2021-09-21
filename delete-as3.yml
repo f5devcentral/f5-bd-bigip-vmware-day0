@@ -17,4 +17,4 @@
     - ../vars/HZN-Lab/deployment.yml
   roles:
     - roles/F5-Roles/wait_for_bigip_startup
-    - roles/F5-Roles/as3_configure
+    - roles/F5-Roles/as3_delete
